@@ -29,9 +29,11 @@ test('test enable and disable', async () => {
   fireEvent.click(checkbox);
   expect(checkbox).toBeChecked();
   expect(colorButton).toBeDisabled();
+  expect(colorButton).toHaveStyle({backgroundColor: 'gray'});
   fireEvent.click(checkbox);
   expect(checkbox).not.toBeChecked();
   expect(colorButton).not.toBeDisabled();
+  expect(colorButton).toHaveStyle({backgroundColor: 'red'});
   
 
 });
